@@ -19,9 +19,9 @@ import com.catalog.com.dto.ProductDTO;
 import com.catalog.com.models.Product;
 import com.catalog.com.services.ProductServiceImpl;
 
-@RestController
+
 @RequestMapping("/api/products")
-@CrossOrigin
+//@CrossOrigin
 public class ProductController {
 	
 	private ProductServiceImpl service;
