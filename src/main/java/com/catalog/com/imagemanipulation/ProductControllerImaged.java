@@ -31,11 +31,15 @@ import com.catalog.com.services.ProductServiceImpl;
 @RequestMapping("/imaged/api/products")
 public class ProductControllerImaged {
 
-	@Autowired
 	private ImageManipulationService fileStorageService;
-
-	@Autowired
 	private ProductServiceImpl service;
+	
+	@Autowired
+	public ProductControllerImaged(ImageManipulationService fileStorageService,
+			ProductServiceImpl service) {
+		this.fileStorageService = fileStorageService;
+		this.service = service;
+	}
 
 	@GetMapping("/downloadFile/{fileName:.+}")
 	public ResponseEntity<Resource> loadImage(@PathVariable String fileName, HttpServletRequest request) {
